@@ -1,0 +1,162 @@
+######################################################
+#      	SCRIPT PARA INICIALIZAÇÃO DE PROGRAMAS 
+######################################################
+#!/bin/bash
+clear
+echo "**Bash Launcher V1.0**"
+echo "Escolha a categoria:"
+echo "01 - Programação"
+echo "02 - Matemática"
+echo "03 - Ferramentas Office"
+echo "04 - Áudio e Vídeo"
+echo "05 - Utilitários"
+echo "06 - Ferramentas Internet"
+read -p "Digite a Categoria: " CTG	
+echo " "
+
+case $CTG in
+	01)
+		echo "Menu Programação:"
+		echo "01 - Pycharm"
+		echo "02 - Atom - Code Editor"
+		echo "03 - Lazarus - Free Pascal"
+		echo "04 - SQLite Studio"
+		read -p "Digite o programa: " PRG
+			case $PRG in
+				01) 
+					(cd Pycharm/bin; ./pycharm.sh& )
+					;;
+				02) 
+					atom&
+					;;
+
+				03) 
+					lazarus-ide&
+					;;
+
+				04) 
+					(cd /opt/SQLiteStudio; ./sqlitestudio& )
+					;;
+
+				*)
+				  	echo "Programa não encontrado."
+				  	exit 0;
+				   	;;					
+				
+			esac
+		;;	#Finalização do bloco de instruções
+	02)
+		echo "Menu Matemática:"
+		echo "01 - Res. Sistemas Lineares"
+		read -p "Digite o programa: " PRG
+			case $PRG in
+				01) 
+					(cd ~/Win/DADOS/Informatica/Info_projetos/Sistemas_Lineares; python3 main.py)
+					;;
+				*)
+				  	echo "Programa não encontrado."
+				  	exit 0;
+				   	;;					
+				
+			esac
+		;;
+	03)
+		echo "Menu Ferramentas Office:"
+		echo "01 - Writer"
+		echo "02 - Calc"
+		echo "03 - Draw"
+		echo "04 - Impress"
+		echo "05 - Math"
+		read -p "Digite o programa: " PRG
+			case $PRG in
+				01) 
+					libreoffice --writer&
+					;;
+				02) 
+					libreoffice --calc&
+					;;
+				03) 
+					libreoffice --draw&
+					;;
+				04) 
+					libreoffice --impress&
+					;;
+				05) 
+					libreoffice --math&
+					;;
+				*)
+				  	echo "Programa não encontrado."
+				  	exit 0;
+				   	;;					
+				
+			esac
+		;;	#Finalização do bloco de instruções	
+
+	04)
+		echo "Menu Áudio e Vídeo:"
+		echo "01 - Gimp"
+		echo "02 - Pinta - Paint Brush"
+		read -p "Digite o programa: " PRG
+			case $PRG in
+				01) 
+					gimp& 
+					;;
+				02) 
+					pinta& 
+					;;
+
+				*)
+				  	echo "Programa não encontrado."
+				  	exit 0;
+				   	;;					
+				
+			esac
+		;;	#Finalização do bloco de instruções
+
+	05)
+		echo "Menu Utilitários:"
+		echo "01 - Brasero - CD-DVD Burner"
+		echo "02 - Gedit"
+		echo "03 - Renomear Arquivo Data-Hora"
+		read -p "Digite o programa: " PRG
+			case $PRG in
+				01) 
+					brasero&
+					;;
+				02) 
+					gedit&
+					;;
+				03) 
+					(cd ~/Dev/Renomear_Arquivo; ./pjtRenomear_arquivo&)
+					;;
+				*)
+				  	echo "Programa não encontrado."
+				  	exit 0;
+				   	;;					
+				
+			esac
+		;;	#Finalização do bloco de instruções
+
+	06)
+		echo "Menu Ferramentas Internet:"
+		echo "01 - gFTP"
+		read -p "Digite o programa: " PRG
+			case $PRG in
+				01) 
+					gftp&
+					;;
+				*)
+				  	echo "Programa não encontrado."
+				  	exit 0;
+				   	;;					
+				
+			esac
+		;;	#Finalização do bloco de instruções
+
+
+	*)		
+		echo "Menu não encontrado"
+		;;
+esac
+
+exit 0
