@@ -51,7 +51,7 @@ case $CTG in
 		read -p "Digite o programa: " PRG
 			case $PRG in
 				01) 
-					(cd ~/Win/DADOS/Informatica/Info_projetos/Sistemas_Lineares; python3 main.py)
+					solvelinsystem
 					;;
 				*)
 				  	echo "Programa não encontrado."
